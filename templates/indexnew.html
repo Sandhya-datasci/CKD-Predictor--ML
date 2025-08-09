@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CKD Prediction Input</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url("/static/kidneyimage.jpg") no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            backdrop-filter: brightness(0.5);
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 80px auto;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #ff3e9d;
+            font-weight: bold;
+            text-shadow: 0 0 10px #ff3e9d;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #ccc;
+        }
+
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #1e1e2f;
+            color: #fff;
+            font-size: 14px;
+        }
+
+        input[type="submit"] {
+            background: linear-gradient(45deg, #ff3e9d, #0ab3ff);
+            color: #fff;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            box-shadow: 0 0 15px #0ab3ff;
+            width: 100%;
+            transition: 0.3s ease-in-out;
+        }
+
+        input[type="submit"]:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px #ff3e9d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Enter Medical Details</h2>
+        <form action="/predict" method="post">
+            <label for="blood_urea">Blood Urea:</label>
+            <input type="text" name="blood_urea" required>
+
+            <label for="blood_glucose_random">Random Blood Glucose:</label>
+            <input type="text" name="blood_glucose_random" required>
+
+            <label for="anemia">Anemia (0=No, 1=Yes):</label>
+            <select name="anemia" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+
+            <label for="coronary_artery_disease">Coronary Artery Disease (0=No, 1=Yes):</label>
+            <select name="coronary_artery_disease" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+
+            <label for="pus_cell">Pus Cell (0=Normal, 1=Abnormal):</label>
+            <select name="pus_cell" required>
+                <option value="0">Normal</option>
+                <option value="1">Abnormal</option>
+            </select>
+
+            <label for="red_blood_cells">Red Blood Cells (0=Normal, 1=Abnormal):</label>
+            <select name="red_blood_cells" required>
+                <option value="0">Normal</option>
+                <option value="1">Abnormal</option>
+            </select>
+
+            <label for="diabetesmellitus">Diabetes Mellitus (0=No, 1=Yes):</label>
+            <select name="diabetesmellitus" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+
+            <label for="pedal_edema">Pedal Edema (0=No, 1=Yes):</label>
+            <select name="pedal_edema" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+</body>
+</html>

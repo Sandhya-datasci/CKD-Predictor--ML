@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Prediction Result</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url("/static/kidneyimage.jpg") no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .glass-box {
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      padding: 40px 60px;
+      box-shadow: 0 0 25px rgba(255, 0, 0, 0.3);
+      text-align: center;
+      color: white;
+      max-width: 500px;
+    }
+
+    .glass-box h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      color: #00ffff;
+      text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+    }
+
+    .result {
+      font-size: 1.8em;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+
+    .detected {
+      color: #ff4c4c;
+      text-shadow: 0 0 8px red, 0 0 16px red;
+    }
+
+    .not-detected {
+      color: #00ff66;
+      text-shadow: 0 0 8px #00ff66, 0 0 16px #00ff66;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      background-color: #00d9ff;
+      color: black;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-size: 1em;
+    }
+
+    .btn:hover {
+      background-color: #00b3cc;
+    }
+  </style>
+</head>
+<body>
+  <div class="glass-box">
+    <h1>Prediction Result</h1>
+
+    {% if prediction_text == "CKD Detected" %}
+      <div class="result detected">{{ prediction_text }}</div>
+    {% elif prediction_text == "No CKD Detected" %}
+      <div class="result not-detected">{{ prediction_text }}</div>
+    {% else %}
+      <div class="result">{{ prediction_text }}</div>
+    {% endif %}
+
+    <a href="/predict_form"><button class="btn">Try Again</button></a>
+  </div>
+</body>
+</html>
