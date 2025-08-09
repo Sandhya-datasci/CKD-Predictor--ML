@@ -19,5 +19,4 @@ This project predicts the presence of Chronic Kidney Disease (CKD) in patients b
 ## Installation
 
 1. Clone this repository:
-   ```bash
-   git clone <your-repo-url>
+   [git clone <your-repo-url>](https://github.com/Sandhya-datasci/CKD-Predictor--ML.git)
