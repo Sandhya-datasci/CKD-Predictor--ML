@@ -22,3 +22,4 @@ This project predicts the presence of Chronic Kidney Disease (CKD) in patients b
 
 ```bash
 git clone(https://github.com/Sandhya-datasci/CKD-Predictor--ML.git)
+cd CKD-Predictor--ML
